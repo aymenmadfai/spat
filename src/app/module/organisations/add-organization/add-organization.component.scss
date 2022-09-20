@@ -1,0 +1,387 @@
+::ng-deep .modal-content {
+  border-radius: 0rem;
+  background: #fafafa 0% 0% no-repeat padding-box;
+}
+.organizationContainer {
+  height: 36rem;
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  .textStyle {
+    color: #02b2b2;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .formu {
+    //display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    //padding-top: 35px;
+    //margin-left: 4%;
+    //margin-right: 2%;
+    .formuname {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .name {
+        padding-bottom: 9px;
+
+        .form-control {
+          //width: 22rem;
+          width: 100%;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  .buttonposition {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 65px;
+    .addbutton {
+      display: flex;
+
+      flex-direction: row;
+      .size {
+        width: 9rem;
+        border-radius: 7px;
+        height: 2.7rem;
+      }
+      .styleCancel {
+        background-color: white;
+        border-color: #979797;
+        color: #979797;
+        font: normal normal normal 16px/20px Geoma Regular Demo;
+      }
+      .styleAdd {
+        background-color: #02b2b2;
+        border-color: #02b2b2;
+        font: normal normal normal 16px/20px Geoma Regular Demo;
+      }
+      .position {
+        padding-left: 18px;
+        padding-right: 3rem;
+      }
+    }
+  }
+}
+.bs-stepper-content .p-dropdown {
+  height: 38px;
+}
+.bs-stepper .line, .bs-stepper-line {
+
+  margin-right: auto;}
+// .tasks-container {
+//   height: 200px;
+//   overflow-y: scroll;
+// }
+// .tasks-title {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+// .single-task {
+//   margin-bottom: 15px;
+// }
+// .single-task input[type="text"] {
+//   width: 60%;
+//   margin-right: 5%;
+
+// }
+// .single-task input[type="number"] {
+//   width: 25%;
+//   margin-right: 5%;
+// }
+// .single-task button {
+//   width: 5%;
+// }
+
+.name .textStyle {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-16) /
+    var(--unnamed-line-spacing-20) var(--unnamed-font-family-geoma-regular-demo);
+  letter-spacing: var(--unnamed-character-spacing-0-32);
+  color: var(--unnamed-color-02b2b2);
+  text-align: left;
+  font: normal normal normal 16px/20px Geoma Regular Demo;
+  letter-spacing: 0.32px;
+  color: #02b2b2;
+}
+.single-task {
+  background: #edeff4 0% 0% no-repeat padding-box;
+  border: 1px solid #cdd4d9;
+  border-radius: 8px;
+  padding: 10px;
+  h3 {
+    font: var(--unnamed-font-style-normal) normal
+      var(--unnamed-font-weight-normal) 24px / var(--unnamed-line-spacing-20)
+      var(--unnamed-font-family-geoma-regular-demo);
+    color: var(--unnamed-color-02b2b2);
+    text-align: left;
+    font: normal normal normal 24px/20px Geoma Regular Demo;
+    letter-spacing: 0.48px;
+    color: #02b2b2;
+  }
+}
+.organization-info-container,
+.tasks-container {
+  height: 75%;
+  overflow-y: scroll;
+}
+.organization-info-container::-webkit-scrollbar,
+.details-container::-webkit-scrollbar {
+  display: none;
+}
+
+.organization-info-container,
+.details-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bs-stepper-header {
+  height: 20%;
+}
+.formContent,
+.bs-stepper-content {
+  padding: 0%;
+  height: 100%;
+}
+.step-trigger,
+.step-trigger .bs-stepper-circle {
+  display: block !important;
+}
+.formContent,
+.bs-stepper-header {
+  position: relative;
+}
+.formContent > form,
+.bs-stepper-header > .step:first-of-type {
+  position: absolute;
+  top: 10%;
+  //left: 36%;
+  width: 100%;
+}
+.bs-stepper-header > .step:last-of-type {
+  position: absolute;
+  top: 13%;
+  right: 32%;
+}
+
+.bs-stepper-header .line {
+  flex: none;
+  width: 160px;
+  height: 2px;
+  /* UI Properties */
+  background: var(--unnamed-color-51565d) 0% 0% no-repeat padding-box;
+  background: #51565d 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin-left: 42%;
+}
+
+.step-trigger {
+  position: relative;
+}
+.step-trigger .bs-stepper-label {
+  font: normal normal normal 12px/14px Geoma Regular Demo;
+  letter-spacing: 0px;
+  color: #51565D;
+  position: absolute;
+  left: -40%;
+  //white-space: pre-line;
+}
+.step.active .step-trigger .bs-stepper-label {
+  font: normal normal normal 12px/20px Geoma Regular Demo;
+  letter-spacing: 0.32px;
+  color: #02B2B2;
+}
+.bs-stepper-circle > i {
+  color: #000;
+  font-size: 6px;
+}
+.bs-stepper-circle {
+  background-color: transparent;
+}
+.active .bs-stepper-circle > i {
+  color: #02b2b2;
+}
+.active .bs-stepper-circle {
+  background: #b4e6e6 0% 0% no-repeat padding-box;
+}
+.bs-stepper .step-trigger:hover {
+  background-color: transparent;
+}
+
+.bs-stepper .step-trigger:hover .bs-stepper-circle {
+  background: #b4e6e6 0% 0% no-repeat padding-box;
+}
+.bs-stepper .step-trigger:hover .bs-stepper-circle > i {
+  color: #02b2b2;
+}
+
+.bs-stepper-label {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-12) /
+    var(--unnamed-line-spacing-14) var(--unnamed-font-family-geoma-regular-demo);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-51565d);
+  text-align: center;
+  font: normal normal normal 12px/14px Geoma Regular Demo;
+  letter-spacing: 0px;
+  color: #51565d;
+}
+
+.active .bs-stepper-label {
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) var(--unnamed-font-size-16) /
+    var(--unnamed-line-spacing-20) var(--unnamed-font-family-geoma-regular-demo);
+  letter-spacing: var(--unnamed-character-spacing-0-32);
+  color: var(--unnamed-color-02b2b2);
+  text-align: center;
+  font: normal normal normal 16px/20px Geoma Regular Demo;
+  letter-spacing: 0.32px;
+  color: #02b2b2;
+  margin-left: -12px;
+}
+
+.title h2 {
+  margin-top: 3%;
+  font: var(--unnamed-font-style-normal) normal
+    var(--unnamed-font-weight-normal) 42px/22px
+    var(--unnamed-font-family-geoma-regular-demo);
+  text-align: center;
+  font: normal normal normal 42px/22px Geoma Regular Demo;
+  letter-spacing: 0.84px;
+  color: #000000;
+  line-height: inherit;
+  margin-bottom: -1.5rem;
+}
+
+.invalidDropdown {
+  .p-dropdown {
+    border-color: #f44336; // This color HEX value comes from PrimeNG.
+  }
+}
+.initiatPD {.p-dropdown {
+  background-image: url(/assets/icon/Group-40687.svg);
+  position: left;
+  padding-left: 30px;
+  background-size: 36px;
+  background-repeat: no-repeat;
+}}
+.inputTextPD{
+  .p-inputtext{
+    padding-top: 4px;
+    padding-left: 8px;
+  }
+}
+.butonReset {
+  margin-top: 15%;
+  margin-right: 29px;
+  border: none;
+  background-color: white;
+  text-align: left;
+  font: normal normal normal 14px/22px Arial;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 0.4;
+}
+.validatedesctask{
+  margin-left: 30px;
+  color: #f44336;
+}
+
+.iti {
+  width: 100%;
+}
+.uploadBtn:enabled:hover,
+.uploadBtn {
+  border-radius: 4px;
+  border-color: #02B2B2;;
+  background-color: #02B2B2;
+  color: #fff;
+  font: normal normal normal 12px/16px Geoma Regular Demo;
+}
+
+  .cdk-overlay-container {
+    z-index:2000
+  }
+
+
+  .country-selector{
+    opacity:1 !important;
+    bottom:8px !important;
+    left: -29px !important;
+  }
+
+  ngx-mat-intl-tel-input {input:not(.country-search){
+    bottom: 11px;
+    left: 10px;
+    padding: 0 6px 0 57px !important;
+  }}
+
+  .country-list-button{
+    font-size: 0.8rem!important;
+  }
+  .mat-menu-content:not(:empty){
+    max-height:240px;
+  }
+  .m-t-10{
+    margin-top:10px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: rgba(0,0,0,.12);
+}
+
+.mat-form-field {
+  .mat-form-field-infix {
+     height: 16px;
+  }
+}
+
+.country-selector-code{
+  display: none;
+}
+
+.mat-button-ripple.mat-ripple, .mat-button-focus-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
+  width: 0px;
+}
+
+
+
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0!important;
+}
+.logoContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#blah {
+  width: 25px;
+}
+.preview {
+  position: relative;
+}
+.preview .p-button-rounded {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

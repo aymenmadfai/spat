@@ -1,0 +1,110 @@
+.cont-organizations  {
+  background: #fff;
+}
+.logo {
+  width: 50px;
+}
+::ng-deep {
+  .p-datatable .p-datatable-thead > tr > th {
+    background: white !important;
+    color: #354360 !important;
+  }
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+  .p-datatable .p-datatable-tbody > tr:nth-child(even) {
+    background: white !important;
+    color: #495057;
+    transition: box-shadow 0.2s;
+  }
+  .p-datatable .p-datatable-tbody > tr {
+    background: #edeff4;
+  }
+  .line-white.p-datatable .p-datatable-tbody > tr {
+    background: white !important;
+  }
+  .line-white.p-datatable .p-datatable-thead > tr > th {
+    background: #EFEFEF!important;
+  }
+  .p-datatable .p-datatable-tbody > tr:focus {
+    outline: none;
+  }
+  .p-datatable .p-datatable-tbody > tr > td.table-position {
+    padding: 13px 0px !important;
+      background: #fafafa !important;
+  }
+  .p-paginator {
+    justify-content: right !important;
+    font-size: 0.6rem !important;
+    .p-dropdown-panel .p-dropdown-items:not(.p-dropdown-virtualscroll) {
+      padding: 0 !important;
+    }
+    .p-dropdown-item {
+      font-size: 0.7rem !important;
+    }
+  }
+  .p-ripple.p-element .p-paginator-first .p-paginator-element.pi {
+    font-size: 0.7rem !important;
+  }
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: transparent !important;
+    border-radius: inherit !important;
+    border: none !important;
+  }
+  .p-link:focus {
+    box-shadow: none;
+  }
+  .p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last {
+    min-width: 1.6rem !important;
+    border-radius: 0 !important;
+    height: 2rem !important;
+  }
+  .p-paginator .p-paginator-pages .p-paginator-page {
+    min-width: 1.6rem !important;
+    border-radius: 0 !important;
+    height: 2rem !important;
+    font-size: 0.8rem !important;
+  }
+  .p-paginator .p-dropdown {
+    height: auto !important;
+    width: fit-content !important;
+  }
+  .p-paginator .p-inputtext {
+    font-size: 0.7rem !important;
+    padding: 6px !important;
+  }
+  .p-paginator .p-dropdown .p-dropdown-trigger {
+    width: 2rem !important;
+    .pi {
+      font-size: 0.7rem;
+  }
+  }
+}
+.url a {
+  text-decoration: none;
+  color: #135ddf;
+}
+.createAccountBtn{
+  background-color: #02b2b2;
+  border-color: #02b2b2;
+  height: 35px;
+  margin-right: 25px;
+  margin-left: auto;
+  font-size: 0.8rem !important;
+  color: white;
+}
+.loader {
+  width: 22px;
+  animation-name: ckw;
+  animation-duration: 15.5s;
+}
+
+@keyframes ckw {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

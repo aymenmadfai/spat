@@ -1,0 +1,4 @@
+{
+  "apiAuth": "${API_AUTH_URL}",
+  "apiUrl" : "${API_URL}"
+}

@@ -1,0 +1,160 @@
+<div class="container pl-1">
+  <div class="title">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="organizationContainer">
+    <div class="formContent">
+      <form [formGroup]="addAccountForm"
+      (ngSubmit)="onSubmit()"
+      class="h-100">
+        <div class="details-container">
+          <div class="row mx-3">
+            <div class="col-md-6">
+              <div class="formu">
+                <div class="formuname">
+                  <div class="name">
+                    <label class="textStyle">Admin First Name</label>
+                  </div>
+                  <div class="name">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Admin Name"
+                      formControlName="adminName"
+                      aria-describedby="basic-addon1"
+                    />
+                    <div
+                      *ngIf="submittedfirstscreen && f.adminName"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.adminName?.errors?.required">
+                        Name is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="formu">
+                <div class="formuname">
+                  <div class="name">
+                    <label class="textStyle">Admin Last Name</label>
+                  </div>
+                  <div class="name inputTextPD">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Admin Last Name"
+                      formControlName="adminLastName"
+                      aria-describedby="basic-addon1"
+                    />
+                    <div
+                      *ngIf="submittedfirstscreen && f.adminLastName?.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.adminLastName?.errors?.required">
+                        Name space is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mx-3">
+            <div class="col-md-6">
+              <div class="formu">
+                <div class="formuname">
+                  <div class="name">
+                    <label class="textStyle">Admin Email</label>
+                  </div>
+                  <div class="name">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Admin Email"
+                      formControlName="adminEmail"
+                      aria-describedby="basic-addon1"
+                    />
+                    <div
+                      *ngIf="submittedfirstscreen && f.adminEmail"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.adminEmail?.errors?.required">
+                        Name is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="formu">
+                <div class="formuname">
+                  <div class="name">
+                    <label class="textStyle">Admin Phone number</label>
+                  </div>
+
+                  <mat-form-field appearance="outline">
+                    <ngx-mat-intl-tel-input
+                      [cssClass]="'custom'"
+                      [preferredCountries]="['tn']"
+                      [enableSearch]="true"
+                      [enablePlaceholder]="true"
+                      placeholder="Enter Number"
+                      name="phone"
+                      formControlName="adminPhoneNumber"
+                      #phonenext
+                      [ngClass]="{
+                        'is-invalid':
+                          submittedfirstscreen && f.adminPhoneNumber?.errors
+                      }"
+                    ></ngx-mat-intl-tel-input>
+                    <mat-hint
+                      >eg :
+                      {{ phonenext.selectedCountry.placeHolder }}</mat-hint
+                    >
+                  </mat-form-field>
+
+                  <div
+                    *ngIf="submittedfirstscreen && f.adminPhoneNumber?.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.adminPhoneNumber?.errors?.required">
+                      Name space is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="buttonposition">
+          <div class="addbutton">
+            <div class="position">
+              <button
+                type="button"
+                class="btn btn-primary size styleCancel"
+                (click)="activeModal.close()"
+              >
+                Cancel
+              </button>
+            </div>
+            <div class="">
+              <button
+                type="button"
+                (click)="onSubmit()"
+                class="btn btn-primary size styleAdd"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

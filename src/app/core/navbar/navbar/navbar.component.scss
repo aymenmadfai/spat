@@ -1,0 +1,91 @@
+.customNavbar {
+  // margin-left: -1%;
+  background-color: white;
+  padding: 0;
+  .UserName {
+    pointer-events: none;
+    background-color: #135ddf;
+    font-size: 0.8rem !important;
+  }
+  .ringSize {
+    width: 34px;
+  }
+  .action-bar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 79px;
+    background-color: white;
+
+    padding-top: 28px;
+    padding-bottom: 24px;
+    .search {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      margin-top: 0px;
+      margin-left: 122px;
+      input:focus {
+        box-shadow: none;
+        border: 1px #f1f1f1;
+      }
+      input {
+        height: 60px;
+        text-indent: 25px;
+        border: 1px #d6d4d4;
+      }
+      .fa-search {
+        position: absolute;
+        top: 20px;
+        left: 16px;
+      }
+      .form-control {
+        width: 57%;
+        height: 48px;
+        background-color: #f1f1f1;
+      }
+    }
+    .add-user {
+      width: 23%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: -7px;
+      margin-left: 44%;
+      .dropdown-toggle::after {
+        display: none;
+      }
+      .dropdown-toggle {
+        background-color: #135ddf;
+        border-color: #135ddf;
+        width: 14rem;
+        color: white;
+        padding-right: 96px;
+        height: 3rem;
+      }
+      .dropdown-menu {
+        transform: translate3d(1387px, 217px, 21px);
+        background-color: #135ddf;
+        width: 14rem;
+        cursor: pointer;
+      }
+      .dropdown-item {
+        background-color: #135ddf;
+        color: white;
+      }
+      .addbtn {
+        position: absolute;
+        width: 136px;
+        height: 47px;
+        background-color: #02b2b2;
+        border-color: #02b2b2;
+        margin-right: 25px;
+        //  background: url(../../../../assets/icon/icon-add.svg) no-repeat;
+      }
+    }
+  }
+}

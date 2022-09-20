@@ -1,0 +1,71 @@
+.titleconfirmation {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font: normal normal normal 42px/34px Geoma Regular Demo;
+  letter-spacing: 0.84px;
+  color: #000000;
+  opacity: 1;
+}
+
+.sub-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+
+  .text-muted {
+    font: normal normal normal 13px/12px Arial;
+    letter-spacing: 0.28px;
+    color: #646464;
+    opacity: 1;
+  }
+}
+
+.styleCancel {
+  background-color: white;
+  border-color: #9797979e;
+  font: normal normal normal 16px/29px Geoma Regular Demo;
+  letter-spacing: 0.63px;
+  color: #979797;
+  padding: 6px 26px !important;
+
+  &:focus {
+    border: none !important;
+    box-shadow: 0 0 0 0.12rem rgb(158 158 158 / 34%) !important;
+  }
+
+  &:hover {
+    background-color: #9e9e9e2b !important;
+    color: #979797;
+  }
+}
+
+.styleAdd {
+  background-color: #02b2b2;
+  border-color: #02b2b2;
+  font: normal normal normal 16px/29px Geoma Regular Demo;
+  letter-spacing: 0.63px;
+  color: #ffffff;
+  padding: 6px 26px !important;
+
+  &:focus {
+    box-shadow: none !important;
+    background-color: #069f9f;
+    border-color: #069f9f;
+    color: white;
+  }
+
+  &:hover {
+    background-color: #069f9f;
+    border-color: #069f9f;
+    color: white;
+  }
+}
+.btn-position {
+
+  justify-content: center;
+  display: flex;
+  padding: 24px 30px 24px 30px;
+}

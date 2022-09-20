@@ -1,0 +1,36 @@
+.breadcrumb {
+  background-color: transparent !important;
+  margin-bottom: 0 !important;
+  .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0 !important;
+    &::before {
+      // content: url(/assets/icon/toLeft.svg) !important;
+      // font-size: 24px;
+      // padding: 0px 10px;
+      // margin-top: 1%;
+
+      padding: 0px 10px;
+      width: 35px;
+      height: 35px;
+      background-image: url(/assets/icon/toLeft.svg) !important;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25%;
+      content: "";
+    }
+  }
+  .breadcrumb-item {
+    a {
+      color: #093a48;
+    }
+    .current-route {
+      color: #6e6e6e;
+    }
+    img {
+      width: 26px;
+    }
+  }
+}
+.container-breadcrumb {
+  margin-left: 5rem;
+}

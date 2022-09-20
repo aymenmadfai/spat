@@ -1,0 +1,152 @@
+
+<div class="container">
+  <div class="container-login">
+    <div class="row">
+
+      <div class="col-md-6 ">
+        <div class="first-col">
+          <img src="assets/img/background.png" alt="login image" class="image-login" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="second-col">
+          <div class="row">
+            <img src="assets/icon/Synapse.svg" alt="logo synapse" class="logo-login" />
+          </div>
+
+          <form [formGroup]="registerForm">
+            <div class="formu">
+              <div class="formulaireContainer form-outline">
+                <div *ngIf="this.isResetMdpI == false && this.isFirstLogin == false">
+                  <h4 class="text-style fontsTyle text-margin">Sign In</h4>
+                </div>
+                <div *ngIf="
+                this.isResetMdpI == true &&
+                this.isNewpassword == false &&
+                this.codeIsgenrated == false &&
+                this.isFirstLogin == false
+              " class="pt-5">
+                  <h4 class="text-reset title-reset-password pt-2">Forgot password</h4>
+                  <label class="text-muted text-reset-password">Please enter your email address</label>
+                </div>
+
+                <div *ngIf="this.codeIsgenrated == true && this.isNewpassword == false">
+                  <h4 class="text-reset title-reset-password fontsTyle pt-2">Enter the code</h4>
+                  <label class="text-muted text-reset-password">Enter the code you received in your e-mail</label>
+                </div>
+
+                <div *ngIf="this.isNewpassword == true || this.isFirstLogin == true">
+                  <h4 class="text-reset title-reset-password fontsTyle pt-2">New password</h4>
+                  <label class="text-muted text-reset-password">Your password must be secure and contain at least 8
+                    characters</label>
+                </div>
+
+                <div *ngIf="
+                this.isNewpassword == false &&
+                this.codeIsgenrated == false &&
+                this.isFirstLogin == false
+              ">
+                  <input type="email" formControlName="email" class="form-control inputStyle" placeholder="Email"
+                    [ngClass]="{
+                  'is-invalid':
+                    (submitted && f.email.errors) || isAuthenticated == false
+                }" />
+                  <div *ngIf="(submitted && f.email.errors) || isAuthenticated == false" class="invalid-feedback">
+                    <div *ngIf="isAuthenticated == false">
+                      Email or password is invalid
+                    </div>
+                    <div *ngIf="f.email.errors?.required">Email is required</div>
+                    <div *ngIf="f.email.errors?.email">
+                      Email must be a valid email address
+                    </div>
+                  </div>
+                </div>
+
+                <div *ngIf="this.isResetMdpI == false || this.isNewpassword == true">
+                  <div style="position: relative">
+                    <input [type]="fieldTextType ? 'text' : 'password'"
+                      class="form-control inputStyle inputStylePassword" formControlName="password"
+                      placeholder="Password" [ngClass]="{
+                    'is-invalid':
+                      (submitted && f.password.errors) || isAuthenticated == false
+                  }" [ngClass]="{
+                    'fa-eye-slash': !fieldTextType,
+                    'fa-eye': fieldTextType
+                  }" />
+                    <img (click)="toggleFieldTextType()" src="assets/icon/eye.svg" class="icon-show" />
+                    <div *ngIf="
+                    (submitted && f.password.errors) || isAuthenticated == false
+                  " class="invalid-feedback">
+                      <div *ngIf="isAuthenticated == false">
+                        Email or password is invalid
+                      </div>
+                      <div *ngIf="f.password.errors?.required">
+                        Password is required
+                      </div>
+                      <div *ngIf="f.password.errors?.minlength">
+                        Password must be at least 8 characters
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div *ngIf="this.isNewpassword == true || this.isFirstLogin == true">
+                  <input type="password" placeholder="Confirm Password" formControlName="confirmPassword"
+                    class="form-control inputStyle" [ngClass]="{
+                  'is-invalid': submitted && f.confirmPassword.errors
+                }" />
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmPassword.errors.required">
+                      Confirm Password is required
+                    </div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">
+                      Passwords must match
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="this.codeIsgenrated == true">
+                  <input type="number" class="form-control inputStyle" formControlName="code" placeholder="code"
+                    [ngClass]="{
+                  'is-invalid': isCodeRejeccted == true
+                }" />
+                  <div class="invalid-feedback">
+                    <div *ngIf="isCodeRejeccted == true">Code is invalid</div>
+                  </div>
+                </div>
+
+                <div *ngIf="this.isResetMdpI == false" class="text-right pt-2 pb-4">
+                  <label class=" cursor-pointer " (click)="SetMdp()"><strong>Forget Password ?</strong></label>
+                </div>
+
+                <div *ngIf="this.isResetMdpI == false && this.isFirstLogin == false">
+                  <button (click)="login()" class="btn btn-primary primary-synapse fontsTyle">
+                    {{ buttonText }}
+                  </button>
+                </div>
+
+                <div class=" pt-4">
+                  <button *ngIf="
+                  this.isResetMdpI == true &&
+                  this.isNewpassword == false &&
+                  this.codeIsgenrated == false
+                " class="btn btn-primary size fontsTyle primary-synapse" (click)="forgotPassword()">
+                    {{ buttonText }}
+                  </button>
+                  <button *ngIf="this.codeIsgenrated == true" class="btn btn-primary size fontsTyle primary-synapse"
+                    (click)="ToResetMDP()">
+                    Verify
+                  </button>
+
+                  <button *ngIf="this.isNewpassword == true || this.isFirstLogin == true"
+                    class="btn btn-primary size fontsTyle" (click)="ResetPassword()">
+                    {{ buttonText }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

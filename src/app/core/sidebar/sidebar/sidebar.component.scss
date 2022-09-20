@@ -1,0 +1,178 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 76px;
+  background: #ffffff;
+  padding-top: 26px;
+  z-index: 1000;
+  overflow: auto;
+  .imgPosition {
+    height: 15%;
+    width: 51%;
+    // margin-left: 21%;
+  }
+}
+
+.logo {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.nav {
+  // margin-top: 22px;
+  display: block;
+  text-align: center;
+  line-height: 44px;
+  // line-height: 84px;
+}
+.nav-link.active,
+.nav-link:hover {
+  background: #37c1d6;
+  // cursor: pointer;
+}
+.nav-link {
+  padding: 0 !important;
+}
+.nav-link a {
+  height: 61px;
+}
+
+.sub-menu {
+  width: max-content;
+  background: #37c1d6;
+  position: fixed;
+  transform: translate(-294px, -44px);
+  // padding: 11px 15px 5px;
+  padding: 0px 17px 0px;
+  color: white;
+  border-radius: 0px 5px 5px 0px !important;
+  cursor: pointer;
+  font-weight: 400;
+  transition: 0.3s ease all;
+  // height: 60px;
+}
+.nav-link:hover {
+  .sub-menu {
+  transform: translate(73px, -44px);
+}
+.home-sidebar {
+  background-image: url(/assets/icon/organisation.svg);
+}
+.user-management-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/friends.svg);
+}
+.organization-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/hover-build.svg);
+}
+.recognition-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/hover-heart.svg);
+}
+.goal-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/arrow.svg);
+}
+.gift-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/gift.svg);
+}
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+li img {
+  cursor: pointer;
+}
+li a {
+  color: white;
+}
+li a:hover {
+  text-decoration: none;
+}
+.logout {
+  position: absolute;
+  bottom: 83px;
+  width: 100%;
+}
+@media (max-width: 1300px) {
+  .logout {
+    position: inherit;
+    margin-top: 30px;
+  }
+}
+.submenu-text {
+  text-align: left;
+  // border-top: 1px solid;
+  &:hover {
+    font-weight: 500;
+  }
+}
+ul {
+  list-style-type: none;
+}
+.sub-menu:hover {
+  .sub-menu-2 {
+    display: block;
+  }
+}
+.sub-menu-2 {
+  display: none;
+  transform: translate(60px, -55px) !important;
+}
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+// ::-webkit-scrollbar-track {
+//   box-shadow: inset 0 0 5px grey;
+// }
+
+.image-sidebar {
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  background-size: 23px;
+  height: 44px;
+}
+.home-sidebar {
+  background-image: url(/assets/icon/organisation.svg);
+}
+.user-management-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/friends.svg);
+}
+.organization-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/build.svg);
+}
+.recognition-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/heart.svg);
+}
+.goal-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/arrow.svg);
+}
+.gift-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/gift.svg);
+}
+.logout-sidebar {
+  background-image: url(/assets/icon/sidebarIcon/logout.svg);
+}
+.active {
+  .home-sidebar{
+    background-image: url(/assets/icon/organisation.svg);
+  }
+  .user-management-sidebar {
+    background-image: url(/assets/icon/sidebarIcon/active-friends.svg);
+  }
+  .organization-sidebar {
+    background-image: url(/assets/icon/sidebarIcon/active-build.svg);
+  }
+  .recognition-sidebar {
+    background-image: url(/assets/icon/sidebarIcon/active-heart.svg);
+  }
+  .goal-sidebar {
+    background-image: url(/assets/icon/sidebarIcon/active-arrow.svg);
+  }
+  .gift-sidebar {
+    background-image: url(/assets/icon/sidebarIcon/active-gift.svg);
+  }
+}

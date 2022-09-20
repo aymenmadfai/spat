@@ -1,0 +1,27 @@
+<div class="sidebar">
+  <div class="logo text-align-center">
+    <a routerLink="/home">
+      <img
+        src="assets/icon/sidebarIcon/logSyn.svg"
+        alt="logo-addinn"
+        class="imgPosition"
+    /></a>
+  </div>
+
+  <ul class="nav justify-content-center">
+    <li class="nav-link active" routerLink="organisations" routerLinkActive="active">
+      <div class="home-sidebar image-sidebar"> </div>
+
+      <!-- <div class="sub-menu">
+        <a routerLink="companies"> Companies</a>
+      </div> -->
+    </li>
+    <li class="nav-link logout">
+      <div class="logout-sidebar image-sidebar"> </div>
+
+      <div class="sub-menu">
+        <a (click)="logout()"> log out</a>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,672 @@
+<div class="container pl-1">
+  <div class="title">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="organizationContainer">
+    <div class="formContent">
+      <form
+        [formGroup]="addOrganizationForm"
+        (ngSubmit)="onSubmit()"
+        class="h-100"
+      >
+      <div class="row mx-3">
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Name</label>
+              </div>
+              <div class="name">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  formControlName="name"
+                  aria-describedby="basic-addon1"
+                  [ngClass]="{
+                    'is-invalid': submittedfirstscreen && f.name?.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedfirstscreen && f.name"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.name?.errors?.required">
+                    Name is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Name space</label>
+              </div>
+              <div class="name inputTextPD">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name Space"
+                  formControlName="namespace"
+                  aria-describedby="basic-addon1"
+                  [ngClass]="{
+                    'is-invalid':
+                      submittedfirstscreen && f.namespace?.errors
+                  }"
+                  [attr.disabled]="organization != undefined ? '' : null"
+                />
+                <div
+                  *ngIf="submittedfirstscreen && f.namespace?.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.namespace?.errors?.required">
+                    Name space is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-3">
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Organization mail</label>
+              </div>
+              <div class="name inputTextPD">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Organization mail"
+                  formControlName="mail"
+                  aria-describedby="basic-addon1"
+                  [ngClass]="{
+                    'is-invalid': submittedfirstscreen && f.mail?.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedfirstscreen && f.mail?.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.mail?.errors?.required">
+                    Organization mail is required
+                  </div>
+                  <div *ngIf="f.mail?.errors?.email">
+                    Email format required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Organization Number</label>
+              </div>
+              <mat-form-field appearance="outline">
+                <ngx-mat-intl-tel-input
+                  [cssClass]="'custom'"
+                  [preferredCountries]="['tn']"
+                  [enableSearch]="true"
+                  [enablePlaceholder]="true"
+                  placeholder="Enter Number"
+                  name="phone"
+                  formControlName="phone"
+                  #phone
+                ></ngx-mat-intl-tel-input>
+                <mat-hint>eg : {{phone.selectedCountry.placeHolder}}</mat-hint>
+
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-3">
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">KBIS/MF</label>
+              </div>
+              <div class="name inputTextPD">
+                <input
+                  type="url"
+                  class="form-control"
+                  placeholder="KBIS/MF"
+                  formControlName="kbis_Mf"
+                  aria-describedby="basic-addon1"
+                  [ngClass]="{
+                    'is-invalid': submittedfirstscreen && f.kbis_Mf?.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedfirstscreen && f.kbis_Mf?.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.url?.errors?.required">
+                    KBIS/MF is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Country</label>
+              </div>
+              <div class="name inputTextPD">
+                <select class="form-control" name="country" id="country" formControlName="country" [ngClass]="{
+                  'is-invalid': submittedfirstscreen && f.country?.errors
+                }">
+                  <option value="" disabled selected>Select Country</option>
+                  <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                </select>
+                <div
+                    *ngIf="submittedfirstscreen && f.country?.errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f.url?.errors?.required">
+                      Country is required
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="row mx-3">
+
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Url Website</label>
+              </div>
+              <div class="name inputTextPD">
+                <input
+                  type="url"
+                  class="form-control"
+                  placeholder="Url website"
+                  formControlName="url"
+                  aria-describedby="basic-addon1"
+                  [ngClass]="{
+                    'is-invalid': submittedfirstscreen && f.url?.errors
+                  }"
+                />
+                <div
+                  *ngIf="submittedfirstscreen && f.url?.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.url?.errors?.required">
+                    Url website is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="formu">
+            <div class="formuname">
+              <div class="name">
+                <label class="textStyle">Upload a logo (optional)</label>
+              </div>
+              <div class="name inputTextPD logoContainer">
+                <button
+                  pButton
+                  type="button"
+                  class="uploadBtn"
+                  (click)="fileInput.click()"
+                >
+                  <span>Upload</span>
+                  <input
+                    #fileInput
+                    type="file"
+                    (change)="onFileInput($event)"
+                    style="display: none"
+                  />
+                </button>
+                <div class="preview">
+                  <img *ngIf="imageSrc"img id="blah" [src]="imageSrc" alt="your image" />
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buttonposition">
+        <div class="addbutton">
+          <div class="position">
+            <button
+              type="button"
+              class="btn btn-primary size styleCancel"
+              (click)="activeModal.close()"
+            >
+              Cancel
+            </button>
+          </div>
+          <div class="">
+            <button
+              type="button"
+              (click)="onSubmit()"
+              class="btn btn-primary size styleAdd"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      </form>
+    </div>
+  </div>
+  <!-- <div id="stepper1" class="bs-stepper organizationContainer">
+    <div class="bs-stepper-header">
+      <div class="step" data-target="#test-l-1">
+        <button class="step-trigger">
+          <div class="bs-stepper-circle">
+            <i class="pi pi-circle-fill"></i>
+          </div>
+          <div class="bs-stepper-label">Organization informations</div>
+        </button>
+      </div>
+      <div class="line"></div>
+      <div class="step" data-target="#test-l-2">
+        <button class="step-trigger">
+          <div class="bs-stepper-circle">
+            <i class="pi pi-circle-fill"></i>
+          </div>
+          <div class="bs-stepper-label">Admin informations</div>
+        </button>
+      </div>
+      <button class="butonReset" (click)="resetForm()">Reset</button>
+    </div>
+    <div class="bs-stepper-content">
+      <form
+        [formGroup]="addOrganizationForm"
+        (ngSubmit)="onSubmit()"
+        class="h-100"
+      >
+        <div id="test-l-1" class="content h-100 mt-4">
+          <div class="organization-info-container pl-2">
+            <div class="row mx-3">
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Name</label>
+                    </div>
+                    <div class="name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name"
+                        formControlName="name"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.name"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.name?.errors?.required">
+                          Name is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Name space</label>
+                    </div>
+                    <div class="name inputTextPD">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name Space"
+                        formControlName="namespace"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.namespace?.errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.namespace?.errors?.required">
+                          Name space is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mx-3">
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Organization mail</label>
+                    </div>
+                    <div class="name inputTextPD">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Organization mail"
+                        formControlName="mail"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.mail?.errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.mail?.errors?.required">
+                          Organization mail is required
+                        </div>
+                        <div *ngIf="f.mail?.errors?.email">
+                          Email format required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Organization Number</label>
+                    </div>
+                    <mat-form-field appearance="outline">
+                      <ngx-mat-intl-tel-input
+                        [cssClass]="'custom'"
+                        [preferredCountries]="['tn']"
+                        [enableSearch]="true"
+                        [enablePlaceholder]="true"
+                        placeholder="Enter Number"
+                        name="phone"
+                        formControlName="phone"
+                        #phone
+                      ></ngx-mat-intl-tel-input>
+                      <mat-hint
+                        >eg : {{ phone.selectedCountry.placeHolder }}</mat-hint
+                      >
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mx-3">
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Url tenant</label>
+                    </div>
+                    <div class="name inputTextPD">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Url tenant"
+                        formControlName="url_tenant"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.admin_mail?.errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.admin_mail?.errors?.required">
+                          Admin mail is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Url Website</label>
+                    </div>
+                    <div class="name inputTextPD">
+                      <input
+                        type="url"
+                        class="form-control"
+                        placeholder="Url website"
+                        formControlName="url"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.url?.errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.url?.errors?.required">
+                          Url website is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mx-3">
+              <div class="col">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Upload a logo (optional)</label>
+                    </div>
+                    <div class="name inputTextPD">
+                      <button
+                        pButton
+                        type="button"
+                        class="uploadBtn"
+                        (click)="fileInput.click()"
+                      >
+                        <span>Upload</span>
+                        <input
+                          #fileInput
+                          type="file"
+                          (change)="onFileInput($event)"
+                          style="display: none"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttonposition">
+            <div class="addbutton">
+              <div class="position">
+                <button
+                  type="button"
+                  class="btn btn-primary size styleCancel"
+                  (click)="activeModal.close()"
+                >
+                  Cancel
+                </button>
+              </div>
+              <div class="">
+                <button
+                  type="button"
+                  (click)="next()"
+                  class="btn btn-primary size styleAdd"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="test-l-2" class="content h-100 mt-4">
+          <div class="details-container">
+            <div class="row mx-3">
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Admin Name</label>
+                    </div>
+                    <div class="name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Admin Name"
+                        formControlName="adminName"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.adminName"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.adminName?.errors?.required">
+                          Name is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Admin Last Name</label>
+                    </div>
+                    <div class="name inputTextPD">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Admin Last Name"
+                        formControlName="adminLastName"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.adminLastName?.errors"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.adminLastName?.errors?.required">
+                          Name space is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mx-3">
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Admin Email</label>
+                    </div>
+                    <div class="name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Admin Email"
+                        formControlName="adminEmail"
+                        aria-describedby="basic-addon1"
+                      />
+                      <div
+                        *ngIf="submittedfirstscreen && f.adminEmail"
+                        class="invalid-feedback"
+                      >
+                        <div *ngIf="f.adminEmail?.errors?.required">
+                          Name is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="formu">
+                  <div class="formuname">
+                    <div class="name">
+                      <label class="textStyle">Admin Phone number</label>
+                    </div>
+
+                    <mat-form-field appearance="outline">
+                      <ngx-mat-intl-tel-input
+                        [cssClass]="'custom'"
+                        [preferredCountries]="['tn']"
+                        [enableSearch]="true"
+                        [enablePlaceholder]="true"
+                        placeholder="Enter Number"
+                        name="phone"
+                        formControlName="adminPhoneNumber"
+                        #phonenext
+                        [ngClass]="{
+                          'is-invalid':
+                            submittedfirstscreen && f.adminPhoneNumber?.errors
+                        }"
+                      ></ngx-mat-intl-tel-input>
+                      <mat-hint
+                        >eg :
+                        {{ phonenext.selectedCountry.placeHolder }}</mat-hint
+                      >
+                    </mat-form-field>
+
+                    <div
+                      *ngIf="submittedfirstscreen && f.adminPhoneNumber?.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.adminPhoneNumber?.errors?.required">
+                        Name space is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="buttonposition">
+            <div class="addbutton">
+              <div class="position">
+                <button
+                  type="button"
+                  class="btn btn-primary size styleCancel"
+                  (click)="previous()"
+                >
+                  Previous
+                </button>
+              </div>
+              <div class="">
+                <button
+                  type="button"
+                  (click)="onSubmit()"
+                  class="btn btn-primary size styleAdd"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div> -->
+</div>

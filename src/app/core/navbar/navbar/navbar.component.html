@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light customNavbar">
+  <a class="navbar-brand">
+    <app-breadcrumb
+      [icon]="params.breadcrumbIcon"
+      [parentLinkTitle]="params.breadrumbTitle"
+    ></app-breadcrumb
+  ></a>
+  <div
+    style="
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: end;
+    "
+  >
+    <a class="navbar-brand">
+      <img src="assets/icon/ring.svg" alt="logo-addinn" class="ringSize" />
+    </a>
+    <a class="navbar-brand">
+      <button type="button" class="btn btn-primary UserName">
+        Bonjour, {{ name }}
+      </button>
+    </a>
+  </div>
+</nav>

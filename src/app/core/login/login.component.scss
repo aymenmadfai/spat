@@ -1,0 +1,80 @@
+
+    .primary-synapse {
+      width: 100%;
+      background-color: #059090;
+      border-color: #059090;
+      padding: 16px;
+      font-weight: 100;
+      }
+    .inputStyle {
+      height: 3.4rem;
+      background-color: #f1f1f1;
+      font-family: "geoma", "arial", sans-serif;
+
+      font: normal normal normal 13px/18px Arial;
+      padding-left: 30px;
+      margin-bottom: 12px;
+    }
+    .form-control:focus {
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .icon-show {
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  .container-login {
+   width: 100%;
+   padding: 20px;
+
+  //  height: 97vh;
+    .col-md-6 .first-col {
+      height: 95vh !important;
+      vertical-align: middle !important;
+      display: table-cell !important;
+
+    }
+    .col-md-6 .second-col {
+      margin-top: 9vh;
+      padding: 0 70px;
+    }
+  }
+  @media (min-width: 1300px) {
+    .container-login {
+       .col-md-6 .second-col {
+         margin-top: 15vh;
+       }
+     }  .col-md-6 .second-col {
+      padding: 0 44px;
+    }
+    .image-login {
+      width: 94% !important;
+    }
+  }
+  @media (min-width: 1200px) {
+
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1288px;
+  }
+  }
+  .image-login {
+    width: 80%;
+    // float: right;
+  }
+  .logo-login {
+
+    margin: auto;
+    width: 79px;
+  }
+  .text-margin {
+    margin-top: 47px;
+    margin-bottom: 28px;
+  }
+  .title-reset-password {
+    font: normal normal normal 25px/20px Geoma Regular Demo !important;
+  }
+  .text-reset-password {
+    font: normal normal normal 13px/15px Arial !important;
+  }
